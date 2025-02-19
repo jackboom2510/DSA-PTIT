@@ -3,11 +3,11 @@
 using namespace std;
 
 int main() {
-	float S = 0;
+	long long S = 0;
 	int n;
 	cin >> n;
 	for(int i = 0; i <= n; i++) {
-		S += (float)(2*i+1)/(2*i+2);
+		S += pow(-1, i+1)*i;
 	}
 	cout << S << endl;
 	return 0;
