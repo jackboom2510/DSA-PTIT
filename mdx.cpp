@@ -15,30 +15,29 @@ using vii = vector<pii>;
 #define se second
 #define ln "\n"
 
-void solve() {
-	int n, c;
-	cin >> n;
-	for(int i = 2; i <= sqrt(n); i++) {
-		if(n % i == 0) {
-			c = 0;
-			while(n % i == 0) {
-				c++;
-				n /= i;
-			}
-			cout << i << "(" << c << ") ";
-		}
+int check(int a[], int n) {
+	for(int i = 0; i <= n/2; i++) {
+		if(a[i] != a[n - i - 1]) return 0;
 	}
-	if(n != 1) cout << n << "(1)";
+	return 1;
+}
+
+void solve() {
+	int n;
+	cin >> n;
+	int a[n];
+	for(int i = 0; i < n; i++)
+		cin >> a[i];
+	if(check(a, n)) cout << "YES";
+	else cout << "NO";
+	cout << ln;
 }
 
 int main() {
 	fast_cin();
 	ll t;
 	cin >> t;
-	for(int it=1;it<=t;it++) {
-		cout << "Test " << it << ": ";
+	for(int it=1;it<=t;it++)
 		solve();
-		cout << ln;
-	}
 	return 0;
 }
