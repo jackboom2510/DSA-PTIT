@@ -16,22 +16,27 @@ using vii = vector<pii>;
 #define ln "\n"
 
 void solve() {
-	string math;
-	getline(cin, math);
-	stringstream ss(math);
-	string x;
-	int sohang[2], index = 0;
-	while(ss >> x) {
-		if(x != "+" && x != "=") {
-			sohang[index++] = stoi(x);
-		}
+	int n, m;
+	cin >> n >> m;
+	int a[n], b[m];
+	set<int> uni;
+	vector<int> inter;
+	for(int i = 0; i < n; i++) {
+		cin >> a[i];
+		uni.insert(a[i]);
 	}
-	if(sohang[0] + sohang[1] == sohang[2]) cout << "YES" << ln;
-	else cout << "NO" << ln;
+	for(int i = 0; i < m; i++) {
+		cin >> b[i];
+		uni.insert(b[i]);
+	}
+	
 }
 
 int main() {
 	fast_cin();
-	solve();
+	ll t;
+	cin >> t;
+	for(int it=1;it<=t;it++)
+		solve();
 	return 0;
 }

@@ -16,18 +16,16 @@ using vii = vector<pii>;
 #define ln "\n"
 
 void solve() {
-	string math;
-	getline(cin, math);
-	stringstream ss(math);
-	string x;
-	int sohang[2], index = 0;
-	while(ss >> x) {
-		if(x != "+" && x != "=") {
-			sohang[index++] = stoi(x);
-		}
+	int n;
+	cin >> n;
+	int a[n];
+	map<int, int> m;
+	for(int i = 0; i < n; i++) {
+		cin >> a[i];
+		m[a[i]]++;
+		if(m[a[i]] == 1)
+			cout << a[i] << " ";
 	}
-	if(sohang[0] + sohang[1] == sohang[2]) cout << "YES" << ln;
-	else cout << "NO" << ln;
 }
 
 int main() {
