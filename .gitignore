@@ -1,0 +1,18 @@
+# File biên dịch
+*.exe
+*.out
+*.o
+*.obj
+
+# Visual Studio Code
+.vscode/
+
+# Competitive Programming Helper
+.cph/
+
+# Hệ điều hành Windows
+Thumbs.db
+desktop.ini
+
+# Hệ điều hành macOS
+.DS_Store
